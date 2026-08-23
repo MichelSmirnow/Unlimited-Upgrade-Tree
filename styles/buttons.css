@@ -1,0 +1,47 @@
+/* ========================================== Общий стиль кнопок ========================================= */
+
+.buy-button { z-index: 100; position: absolute; width: 200px; height: 100px; box-shadow: 0 0 10px rgba(0,0,0,0.5), inset 0 0 5px rgba(0,0,0,0.15); border-radius: 1px; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; filter: brightness(100%); transition: outline 0.5s ease, filter 0.3s; }
+.buy-button:hover { filter: brightness(115%); transition: outline 0.5s ease, filter 0.3s; }
+.buy-button:active { filter: brightness(85%); transition: outline 0.5s ease, filter 0.3s; }
+.buy-button p { color: #ffffff; -webkit-text-stroke: 3px #000000; paint-order: stroke fill; }
+.button-container { position: relative; width: 100%; height: 100%; }
+div.button-id-container { position: absolute; top: 2px; left: 5px; width: auto; height: 16px; }
+div.button-subcontainer { display: flex; justify-content: center; align-items: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 90%; height: 60%; border-radius: 2px; }
+div.button-num-container { position: absolute; right: 5px; bottom: 2px; width: auto; height: 16px; }
+div.button-cost-container { position: absolute; left: 5px; bottom: 2px; width: auto; height: 16px; }
+p.button-description { font-size: 14px; } p.button-id, p.button-cost, p.button-num { font-size: 12px; }
+
+/* ====================================== Основная линия обновлений ====================================== */
+
+.baseplate { z-index: 1; position: absolute; border-radius: 25px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+
+/* Кнопки обновления points */
+.P-button { background-color: #A0A0A0; border: 0; outline: 3px solid #848484; transition: outline 0.5s ease, filter 0.3s;}
+.P-button div.button-subcontainer { background-color: #747474; box-shadow: inset 0 0 5px rgba(0,0,0,0.25);}
+.P-button.bought { outline: 3px solid #dacc10 !important; transition: outline 0.5s ease, filter 0.3s;}
+#point-baseplate { left: 50px; bottom: 50px; width: 2000px; height: 1000px; background-image: url('../assets/point-baseplate.jpg'); background-repeat: repeat; background-size: 15%; filter: brightness(95%); }
+
+/* Кнопки обновления rebirth */
+.rebirth-button {}
+
+/* Кнопки обновления ascend */
+.ascend-button {}
+
+/* Кнопки обновления transcend */
+.transcend-button {}
+
+/* Кнопки обновления sacrifice */
+.sacrifice-button {}
+
+/* Кнопки обновления zenith */
+.zenith-button {}
+
+/* ====================================== Побочная линия обновлений ====================================== */
+
+/* Кнопки обновления bytum */
+.bytum-button {}
+
+/* Кнопки обновления quantum */
+.quantum-button {}
+
+/* ===================================== Бесполезная линия обновлений ==================================== */

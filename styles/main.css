@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    touch-action: none; /* Отключаем стандартные жесты браузера */
+}
+
+/* ✓ Контейнеры таблеточных элементов */
+.tablet-list { display: flex; flex-direction: column;justify-content: center; align-items: center; gap: 10px; margin: 10px; }
+.tablet-container { position: relative; width: 100%; min-height: 60px; border-radius: 30px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); filter: brightness(100%); transition: filter 0.5s ease; }
+.tablet-container.tablet-hoverable:hover { filter: brightness(110%); transition: filter 0.2s ease; }
+.tablet-container.tablet-hoverable:active { filter: brightness(90%); transition: filter 0.2s ease; }
+img.tablet-banner { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; border-radius: 30px; position: absolute; top: 0; left: 0; }
+.tablet-subcontainer { display: flex; flex-direction: row; align-items: center; justify-content: center; position: relative; width: calc(100% - 10px); height: auto; min-height: 50px; margin: 5px; padding: 0; border-radius: 20px; }
+.tablet-subcontainer > div { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 15px; width: 100%; }
+.tablet-subvertical { width: calc(100% - 60px); }
+img.tablet-image { width: 70px; height: 70px; border-radius: 100px; object-fit: cover; flex-shrink: 0; filter: drop-shadow(0 0 10px rgba(0,0,0,0.25));}
+
+/* ✓ Стандартное форматирование уведомлений */
+#notifications { position: fixed; z-index: 999999; bottom: 20px; right: 20px; width: 30vw; min-width: 300px; max-width: 500px; padding: 0; margin: 0 !important; display: flex; flex-direction: column; gap: 10px; }
+.notification-hidden { height: 0 !important; min-height: 0 !important; opacity: 0 !important; visibility: hidden !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important; }
+.notification-appearing { --content-height: auto; height: var(--content-height) !important; min-height: 60px !important; opacity: 1 !important; visibility: visible !important; overflow: hidden !important; margin: 0 !important; padding: 0 !important; transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important; }
+.notification-visible { opacity: 1; max-height: var(--content-height); overflow: visible; transition: none; }
+.notification-hiding { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1); }
+.notification-container { height: auto; }
+.notification-header { font-size: 20px; color: #ffffff !important; -webkit-text-stroke: 4px #000000; paint-order: stroke fill; font-size: 20px; margin: 0; padding: 0; display: block; word-break: break-word; }
+.notification-text { color: #ffffff !important; font-size: 0.9em; margin: 5px 15px 0px -3px; padding: 5px; display: block; word-break: break-word; background-color: rgba(0,0,0,0.15); border-radius: 10px; text-shadow: 0 0 10px rgba(0,0,0,0.25);}
+
+/* ✓ Фиксированный интерфейс */
+.ui-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; }
+#ui-logo { position: absolute; top: 10px; left: 10px; width: 30%; min-width: 250px; max-width: 400px; }
+#ui-stats { position: absolute; top: 200px; left: 30px; width: 200px; height: calc(100% - 300px); background-color: rgba(0,0,0,0.25); box-shadow: 0 0 10px rgba(0,0,0,0.5); border-radius: 20px; backdrop-filter: blur(5px); pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: start; gap: 10px; padding: 20px 0px;}
+#ui-stats p { color: #ffffff; -webkit-text-stroke: 3px #000000; paint-order: stroke fill; font-size: 20px; }
+
+/* Перемещаемое поле */
+.field {
+    position: absolute;
+    width: 10000px;
+    height: 5000px;
+    background: linear-gradient(135deg, #2a2a3a 0%, #1a1a2a 100%);
+    cursor: grab;
+    user-select: none;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    transition: cursor 0.2s;
+}
+
+.field.dragging { cursor: grabbing; }
+.field-content { position: relative; width: 100%; height: 100%;}
+
+
+.zoom-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    pointer-events: auto;
+    align-items: center;
+}
+
+.zoom-button {
+    width: 40px;
+    height: 40px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-button:hover {
+    background-color: #357abd;
+}
+
+.zoom-button:active {
+    background-color: #2a5a9d;
+}
+
+.zoom-display {
+    color: white;
+    font-size: 16px;
+    min-width: 60px;
+    text-align: center;
+    font-weight: bold;
+}

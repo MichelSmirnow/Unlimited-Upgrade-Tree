@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+</head>
+<body>
+    <div id="notifications" class="tablet-list"></div>
+    <!-- Перемещаемое поле -->
+    <div id="field" class="field"><div id="field-container" class="field-content">
+        <div id="point-baseplate" class="baseplate"></div>
+    </div></div>
+
+    <!-- Фиксированный интерфейс -->
+    <div id="ui" class="ui-overlay">
+        <img id="ui-logo" src="assets/logo.png"/>
+        <div id="ui-stats"><p>Очки: <span id="stat-P">0</span>P</p></div>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>
