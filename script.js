@@ -88,7 +88,7 @@ const buttonData = {
     "DESC": "Количество <span style=\"color: #06CECE\">очков</span> стимулирует собственный доход",
     "CURRENCY":"P",
     "UNLOCK":["P10"],
-    "C":1,
+    "C":0.5,
   },
   "P9": {
     "X": 450,
@@ -109,22 +109,203 @@ const buttonData = {
     "NAME":"22 миллиарда долларов!",
     "DESC": "Улучшить формулу стимулирования дохода <span style=\"color: #06CECE\">очков</span>",
     "CURRENCY":"P",
-    "UNLOCK":[],
-    "D":2,
+    "UNLOCK":["P15"],
+    "D":1.1,
   },
   "P11": {
     "X": 700,
     "Y": 500,
     "COST": 24000,
     "CAP": 1,
-    "NAME":"",
+    "NAME":"Арифметическая прогрессия",
     "DESC": "Добавить <span style=\"color: #06CECE\">+10P/сек</span> к основной формуле",
     "CURRENCY":"P",
-    "UNLOCK":[],
+    "UNLOCK":["P12","P13","P16"],
     "A":10,
   },
+  "P12": {
+    "X": 700,
+    "Y": 650,
+    "COST": 15000,
+    "CAP": 5,
+    "NAME":"Шаг назад",
+    "DESC": "Добавить <span style=\"color: #06CECE\">+5P/сек</span> к основной формуле",
+    "CURRENCY":"P",
+    "UNLOCK":["P14"],
+    "A":5,
+  },
+  "P13": {
+    "X": 700,
+    "Y": 350,
+    "COST": 2400000,
+    "CAP": 1,
+    "NAME":"Шаг вперед",
+    "DESC": "Умножить доход <span style=\"color: #06CECE\">x2.5Р/сек</span>",
+    "CURRENCY":"P",
+    "UNLOCK":[],
+    "B":2.5,
+  },
+  "P14": {
+    "X": 700,
+    "Y": 800,
+    "COST": 440000,
+    "CAP": 10,
+    "NAME":"Эмоциональные качели",
+    "DESC": "Добавить <span style=\"color: #06CECE\">+7P/сек</span> к основной формуле",
+    "CURRENCY":"P",
+    "UNLOCK":[],
+    "A":7,
+  },
+  "P15": {
+    "X": 700,
+    "Y": 200,
+    "COST": 52000000,
+    "CAP": 1,
+    "NAME":"22 ТРИЛЛИОНА ДОЛЛАРОВ!",
+    "DESC": "<span style=\"color: #06CECE\">Удвоить</span> собственный доход <span style=\"color: #06CECE\">очков</span>",
+    "CURRENCY":"P",
+    "UNLOCK":["P19"],
+    "С":0.5,
+  },
+  "P16": {
+    "X": 950,
+    "Y": 500,
+    "COST": 11700000,
+    "CAP": 1,
+    "NAME":"Геометрическая прогрессия",
+    "DESC": "Умножить доход <span style=\"color: #06CECE\">x5Р/сек</span>",
+    "CURRENCY":"P",
+    "UNLOCK":["P17","P18","P21"],
+    "B":5,
+  },
+  "P17": {
+    "X": 950,
+    "Y": 350,
+    "COST": 25*(10**6),
+    "CAP": 1,
+    "NAME":"Ускоряемся!",
+    "DESC": "Умножить доход <span style=\"color: #06CECE\">x3Р/сек</span>",
+    "CURRENCY":"P",
+    "UNLOCK":["P23"],
+    "B":3,
+  },
+  "P18": {
+    "X": 950,
+    "Y": 650,
+    "COST": 8*(10**7),
+    "CAP": 3,
+    "NAME":"Дорогое удовольствие",
+    "DESC": "Добавить немаленькие <span style=\"color: #06CECE\">+20P/сек</span> к основной формуле",
+    "CURRENCY":"P",
+    "UNLOCK":["P20","P22"],
+    "A":20,
+  },
+  "P19": {
+    "X": 950,
+    "Y": 200,
+    "COST": 10**9,
+    "CAP": 5,
+    "NAME":"Совсем другое дело",
+    "DESC": "<span style=\"color: #06CECE\">Усилить</span> коэфициент формулы собственного дохода <span style=\"color: #06CECE\">очков</span>",
+    "CURRENCY":"P",
+    "UNLOCK":["P24"],
+    "D":1.1
+  },
+  "P20": {
+    "X": 950,
+    "Y": 800,
+    "COST": 10**18,
+    "CAP": 1,
+    "NAME":"Новая эра",
+    "DESC": "Открыть <span style=\"color: #ce0606ff\">платформу автоматизации (B/Bits)</span> (Перманентно)",
+    "CURRENCY":"P",
+    "UNLOCK":["B1"],
+  },
+  "P21": {
+    "X": 1200,
+    "Y": 500,
+    "COST": 2*(10**9),
+    "CAP": 1,
+    "NAME":"Мультиобновление",
+    "DESC": "Добавить <span style=\"color: #06CECE\">+45P/сек</span> к формуле и умножить доход на <span style=\"color: #06CECE\">x2Р/сек</span>",
+    "CURRENCY":"P",
+    "UNLOCK":["P26"],
+    "A":45,
+    "B":2,
+  },
+  "P22": {
+    "X": 1200,
+    "Y": 650,
+    "COST": 7.5*(10**9),
+    "CAP": 5,
+    "NAME":"",
+    "DESC": "Добавить колоссальные <span style=\"color: #06CECE\">+50P/сек</span> к основной формуле",
+    "CURRENCY":"P",
+    "UNLOCK":[],
+    "A":20,
+  },
+  "P23": {
+    "X": 1200,
+    "Y": 350,
+    "COST": 2.8*(10**8),
+    "CAP": 10,
+    "NAME":"Странное обновление",
+    "DESC": "Смешно увеличить доход на <span style=\"color: #06CECE\">x1.2Р/сек</span>",
+    "CURRENCY":"P",
+    "UNLOCK":[],
+    "B":1.2,
+  },
+  "P26": {
+    "X": 1450,
+    "Y": 500,
+    "COST": 0,
+    "CAP": 1,
+    "NAME":"",
+    "DESC": "",
+    "CURRENCY":"P",
+    "UNLOCK":["P31"],
+  },
+  "P31": {
+    "X": 1700,
+    "Y": 500,
+    "COST": 15*(10**12),
+    "CAP": 1,
+    "NAME":"Престиж",
+    "DESC": "Открыть <span style=\"color: #cec106ff\">платформу престижа (R/Rebirth)</span> (Перманентно)",
+    "CURRENCY":"P",
+    "UNLOCK":["Rs"],
+  },/**/
 };
-let rendered = {"P1":0};
+let rendered  = {"P1":0};
+
+/* =================================== Игровые валюты и доход =================================== */
+
+// Список игровых валют и обработка изменения значений
+const statP = document.getElementById('stat-P');
+const STANDART_CURRENCY = { P:0,R:0 }
+const STANDART_GAINS = {
+  P: {a:0,b:1,c:0,d:1}
+};
+let currency = STANDART_CURRENCY;
+let currencies = {
+  get P() { return currency.P; },
+  set P(val) { currency.P = val; statP.innerHTML = formatter.format(currency.P, NumberFormats.AD_STANDARD, 2); }
+}
+let gains = STANDART_GAINS;
+function calculate(currence, time) {
+    const result = time * (gains[currence].a * gains[currence].b * (1 + gains[currence].c*currencies[currence] ** (0.1 * gains[currence].d)));
+    currencies[currence] = Math.round((currencies[currence] + result) * 100) / 100;
+}
+function increase(currency, a, b, c, d) {
+    if (!a) a = 0;
+    if (!b) b = 1;
+    if (!c) c = 0;
+    if (!d) d = 1;
+    gains[currency].a += a;
+    gains[currency].b *= b;
+    gains[currency].c += c;
+    gains[currency].d *= d;
+}
 
 /* =================================== Объекты и процессы =================================== */
 
@@ -175,8 +356,8 @@ class FieldController {
     }
 
     initializeCameraPosition() {
-        this.currentX = 0;
-        this.currentY = this.viewportHeight - this.fieldHeight;
+        this.currentX = 200;
+        this.currentY = this.viewportHeight - this.fieldHeight - 200;
         this.offsetX = this.currentX;
         this.offsetY = this.currentY;
         this.updateFieldTransform();
@@ -344,12 +525,23 @@ class FieldController {
     constrainPosition() {
         const scaledFieldWidth = this.fieldWidth * this.scale;
         const scaledFieldHeight = this.fieldHeight * this.scale;
-        const maxX = this.boundaryPadding;
-        const minX = this.viewportWidth - scaledFieldWidth - this.boundaryPadding;
-        const maxY = this.boundaryPadding;
-        const minY = this.viewportHeight - scaledFieldHeight - this.boundaryPadding;
-        this.currentX = Math.max(minX, Math.min(maxX, this.currentX));
-        this.currentY = Math.max(minY, Math.min(maxY, this.currentY));
+        const scaledPadding = this.boundaryPadding * this.scale;
+        if (scaledFieldWidth < this.viewportWidth) {
+            const centerX = (this.viewportWidth - scaledFieldWidth) / 2;
+            this.currentX = centerX;
+        } else {
+            const maxX = scaledPadding;
+            const minX = this.viewportWidth - scaledFieldWidth - scaledPadding;
+            this.currentX = Math.max(minX, Math.min(maxX, this.currentX));
+        }
+        if (scaledFieldHeight < this.viewportHeight) {
+            const centerY = (this.viewportHeight - scaledFieldHeight) / 2;
+            this.currentY = centerY;
+        } else {
+            const maxY = scaledPadding;
+            const minY = this.viewportHeight - scaledFieldHeight - scaledPadding;
+            this.currentY = Math.max(minY, Math.min(maxY, this.currentY));
+        }
     }
 
     updateFieldTransform() {
@@ -381,8 +573,8 @@ const NumberFormats = {
 };
 class NumberFormatter {
   constructor() {
-    this.kMBd = ["", "K", "M", "B", "T", "Qa", "Qt", "Sx", "Sp", "Oc", "No", "Dc"];
-    this.unitPrefixes = ["U", "D", "T", "Qa", "Qn", "Sx", "Sp", "O", "N"];
+    this.kMBd = ["", "K", "M", "B", "T", "Qd", "Qn", "Sx", "Sp", "Oc", "No", "Dc"];
+    this.unitPrefixes = ["U", "D", "T", "Qd", "Qn", "Sx", "Sp", "Oc", "No"];
     this.tensPrefixes = ["Dc", "Vg", "Tg", "Qd", "Qn", "Se", "St", "Og", "Nn"];
     this.hundredsPrefixes = ["Ce", "Dn", "Tc", "Qe", "Qu", "Sc", "Si", "Oe", "Ne"];
     this.tier2Illions = ["MI", "MC", "NA", "PC", "FM", "AT", "ZP"];
@@ -481,6 +673,175 @@ class NumberFormatter {
 }
 const formatter = new NumberFormatter();
 
+// База данных
+const DBManager = (() => {
+  const DB_NAME = 'AppData';
+  const DB_VERSION = 1;
+  const STORE_NAME = 'gameData';
+  let db = null;
+  let currenciesSaveTimer = null;
+  let otherDataSaveTimer = null;
+  
+  // ✓ Инициализация базы данных
+  const initDB = () => {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, DB_VERSION);
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+        db = request.result;
+        resolve(db);
+      };
+      request.onupgradeneeded = (event) => {
+        const database = event.target.result;
+        if (!database.objectStoreNames.contains(STORE_NAME)) {
+          database.createObjectStore(STORE_NAME);
+        }
+      };
+    });
+  };
+  
+  // ✓ Аппаратное сохранение данных [data] в хранилище с ключом [key]
+  const saveData = (key, data) => {
+    if (!db) return Promise.reject('DB not initialized');
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      const request = store.put(JSON.parse(JSON.stringify(data)), key);
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => resolve();
+    });
+  };
+  
+  // ✓ Аппаратная выгрузка данных из хранилища с ключом [key]
+  const loadData = (key) => {
+    if (!db) return Promise.reject('DB not initialized');
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([STORE_NAME], 'readonly');
+      const store = transaction.objectStore(STORE_NAME);
+      const request = store.get(key);
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => resolve(request.result);
+    });
+  };
+  
+  // ✓ Автосохранение currencies
+  const startCurrenciesSave = () => {
+    currenciesSaveTimer = setInterval(() => {
+      saveData('currency', currency);
+    }, 1000);
+  };
+  
+  // ✓ Автосохранение купленных кнопок и доходов
+  const startOthersSave = () => {
+    otherDataSaveTimer = setInterval(() => {
+      saveData('gains', gains);
+      saveData('rendered', rendered);
+    }, 60000);
+  };
+
+  // ✓ Ручное сохранение купленных кнопок и доходов
+  const manualSave = async () => {
+    await saveData('gains', gains);
+    await saveData('rendered', rendered);
+  };
+
+  // ✓ Загрузка данных пользовательского сохранения
+  const loadAllData = async () => {
+    try {
+      const loadedCurrency = await loadData('currency');
+      const loadedGains = await loadData('gains');
+      const loadedRendered = await loadData('rendered');
+      if (!loadedCurrency) { currencies = STANDART_CURRENCY;
+      } else { 
+        Object.keys(currency).forEach(key => delete gains[key]);
+        Object.assign(currency, loadedCurrency);
+      }
+      if (!loadedGains) { gains = STANDART_GAINS;
+      } else {
+        Object.keys(gains).forEach(key => delete gains[key]);
+        Object.assign(gains, loadedGains);
+      }
+      if (!loadedRendered) { rendered = {"P1":0};
+      } else {
+        Object.keys(rendered).forEach(key => delete rendered[key]);
+        Object.assign(rendered, loadedRendered);
+      }
+      return { loadedCurrency, loadedGains, loadedRendered };
+    } catch (error) {
+      console.error('Error loading data from IndexedDB:', error);
+    }
+  };
+  
+  // ✓ Инициализация
+  const init = async () => {
+    try {
+      await initDB();
+      await loadAllData();
+      for (const [key, bought] of Object.entries(rendered)) { renderButton(key, bought); }
+      startCurrenciesSave(); startOthersSave();
+    } catch (error) {
+      console.error('DBManager initialization failed:', error);
+    }
+  };
+  
+
+
+  const cleanup = () => {
+    if (currenciesSaveTimer) clearInterval(currenciesSaveTimer);
+    if (otherDataSaveTimer) clearTimeout(otherDataSaveTimer);
+  };
+  
+  const clearAllData = async () => {
+    if (!db) return Promise.reject('DB not initialized');
+    
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction([STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      const request = store.clear();
+      
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+        console.log('All data cleared from IndexedDB');
+        resolve();
+      };
+    });
+  };
+  
+  const resetGameData = async () => {
+    try {
+      // Очищаем IndexedDB
+      await clearAllData();
+      
+      // Сбрасываем объекты в памяти
+      currencies._P = 0;
+      currencies.P = 0; // Срабатывает setter для обновления UI
+      
+      Object.keys(gains).forEach(key => delete gains[key]);
+      gains.P = { a: 0, b: 1, c: 0, d: 1 };
+      
+      Object.keys(rendered).forEach(key => delete rendered[key]);
+      rendered.P1 = 0;
+      
+      console.log('Game data reset successfully');
+      return true;
+    } catch (error) {
+      console.error('Error resetting game data:', error);
+      return false;
+    }
+  };
+  
+
+  return {
+    init,
+    cleanup,
+    saveData,
+    loadData,
+    manualSave,
+    clearAllData,
+    resetGameData
+  };
+})();
+
 /* =================================== Уведомления и система =================================== */
 
 // ✓ Функция отображения уведомления
@@ -539,40 +900,10 @@ function notification(
   }, Number(duration));
 }
 
-/* =================================== Игровые валюты и доход =================================== */
-
-// Список игровых валют и обработка изменения значений
-const statP = document.getElementById('stat-P');
-let currencies = {
-  _P:0,
-  get P() { return this._P; },
-  set P(val) { this._P = val; statP.innerHTML = formatter.format(this._P, NumberFormats.AD_STANDARD, 2); }
-}
-
-// Расчет дохода
-let gains = {
-    P: {a:0,b:1,c:0,d:1}
-}
-function calculate(currency, time) {
-    const result = time * (gains[currency].a * gains[currency].b * (1 + gains[currency].c*currencies[currency] ** (0.1 * gains[currency].d)));
-    currencies[currency] = Math.round((currencies[currency] + result) * 100) / 100;
-}
-function increase(currency, a, b, c, d) {
-    if (!a) a = 0;
-    if (!b) b = 1;
-    if (!c) c = 0;
-    if (!d) d = 1;
-    gains[currency].a += a;
-    gains[currency].b *= b;
-    gains[currency].c += c;
-    gains[currency].d *= d;
-}
-
 /* =================================== Внутриигровые процессоры =================================== */
 
-// Автоматический рендер кнопок и добавление обработчиков нажатий
+// ✓ Автоматический рендер кнопок и добавление обработчиков нажатий
 const fieldContainer = document.getElementById('field-container');
-for (const [key, bought] of Object.entries(rendered)) { renderButton(key, bought); }
 function renderButton(key, bought) {
   const value = buttonData[key];
   if (!bought) bought = rendered[key];
@@ -580,6 +911,8 @@ function renderButton(key, bought) {
   newButton.classList.add('buy-button');
   newButton.classList.add(`${key.substring(0,1)}-button`);
   newButton.setAttribute('style',`left: ${value.X}px; bottom: ${value.Y}px;`);
+  if (bought >= value.CAP) {newButton.classList.add('bought');}
+  if (bought > 0) {(value.UNLOCK).forEach((item) => { renderStick(item); });}
 
   function renderInnerButton() {
     const num = (bought >= value.CAP) ? `Приобретено (${value.CAP}/${value.CAP})` : `${bought}/${value.CAP}`;
@@ -592,8 +925,44 @@ function renderButton(key, bought) {
     </div>`;
   }
 
+  function renderStick(item) {
+    const isUp = (value.Y < buttonData[item].Y) && (value.X === buttonData[item].X);
+    const isDown = (value.Y > buttonData[item].Y) && (value.X === buttonData[item].X);
+    const isRight = (value.X < buttonData[item].X) && (value.Y === buttonData[item].Y);
+    const isLeft = (value.X > buttonData[item].X) && (value.Y === buttonData[item].Y);
+    let stickX = 0;
+    let stickY = 0;
+    let stickWidth = 0;
+    let stickHeight = 0;
+    if (isUp) {
+      stickX = value.X + 90;
+      stickY = value.Y + 50;
+      stickWidth = 20;
+      stickHeight = (buttonData[item].Y + 50) - stickY;
+    } else if (isDown) {
+      stickX = buttonData[item].X + 90;
+      stickY = buttonData[item].Y + 50;
+      stickWidth = 20;
+      stickHeight = (value.Y + 50) - stickY;
+    } else if (isRight) {
+      stickX = value.X + 100;
+      stickY = value.Y + 40;
+      stickWidth = (buttonData[item].X + 100) - stickX;
+      stickHeight = 20;
+    } else if (isLeft) {
+      stickX = buttonData[item].X + 100;
+      stickY = buttonData[item].Y + 40;
+      stickWidth = (value.X + 100) - stickX;
+      stickHeight = 20;
+    }
+    const buttonStick = document.createElement('div');
+    buttonStick.classList.add('buttonStick');
+    buttonStick.setAttribute('style', `left: ${stickX}px; bottom: ${stickY}px; width: ${stickWidth}px; height: ${stickHeight}px;`);
+    fieldContainer.appendChild(buttonStick);
+  }
+
   renderInnerButton();
-  newButton.addEventListener('click', () => {
+  newButton.addEventListener('click', async() => {
     if (currencies[value.CURRENCY] >= value.COST && bought < value.CAP) {
       currencies[value.CURRENCY] -= value.COST;
       rendered[key] += 1; bought = rendered[key];
@@ -601,12 +970,15 @@ function renderButton(key, bought) {
       if (bought >= value.CAP) newButton.classList.add('bought');
       renderInnerButton();
       const isAnyIn = (value.UNLOCK).some(a => (Object.keys(rendered)).includes(a));
-      if (!isAnyIn) {(value.UNLOCK).forEach((item) => { rendered[item] = 0; renderButton(item); });}
+      if (!isAnyIn) {(value.UNLOCK).forEach((item) => { 
+        rendered[item] = 0; renderStick(item); renderButton(item); 
+      });}
+      DBManager.manualSave();
     } else if (bought >= value.CAP) {
         notification(
             'Уже куплено',
             `Максимальный уровень обновления (${value.CAP}) для кнопки ${key} уже приобретен`,
-            3000, '#1c8ad3ff', undefined, '', undefined
+            3000, '#1c8ad3ff', undefined, 'assets/bought.png', undefined
         );
     } else if (currencies[value.CURRENCY] < value.COST)  {
         notification(
@@ -625,8 +997,12 @@ function renderButton(key, bought) {
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 document.addEventListener('DOMContentLoaded', async() => { 
     new FieldController();
+    DBManager.init();
     while(true) {
         calculate('P', 0.1);
         await delay(100); 
     }
 });
+
+// Очистка при выходе
+window.addEventListener('beforeunload', () => { DBManager.cleanup(); });
